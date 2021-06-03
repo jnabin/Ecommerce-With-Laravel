@@ -17,18 +17,25 @@
   <section class="container-fluid">
     <section class="row justify-content-center">
       <section class="col-10 col-sm-6 col-lg-4">   
-        <form class="form-container bg-light">
+        <form class="form-container bg-light" action="login" method="POST">
+          @csrf
         <div class="container-fluid text-center mb-3">
-          <h4 class="text-primary">Admin Login</h4>
+          <h4 class="text-primary">Login</h4>
           <h5 style="color:red">{{session('msg')}}</h5>
         </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="username">
+              @if($errors->has('username'))
+              <span class="text-danger">{{$errors->first('username')}}</span>
+              @endif
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+              @if($errors->has('password'))
+              <span class="text-danger">{{$errors->first('password')}}</span>
+              @endif
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
             <div class="text-left mt-3">

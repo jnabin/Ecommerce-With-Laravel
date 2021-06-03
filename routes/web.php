@@ -23,6 +23,7 @@ Route::get('/man', [ManFashionController::class, 'index'])->name('ManFashion.ind
 Route::get('/woman', [WomenFashionController::class, 'index'])->name('WomenFashion.index');
 
 Route::get('/login', [LoginController::class, 'index'])->name('Login.index');
+Route::post('/login', [LoginController::class, 'verify']);
 
 Route::group(['middleware'=>['verifysession']], function(){
     Route::get('/admin', [AdminHomeController::class, 'index'])->name('AdminHome.index');

@@ -317,7 +317,7 @@
     </div>
 <div class="col pl-1">
 <a class = "mr-3 text-secondary" href="#"><i class="fa fa-shopping-bag fa-lg"></i></a>
-  <a class = "text-secondary" href="#"><i class="fa fa-user fa-lg"></i></a>
+  <a class = "text-secondary" href="{{route('Login.index')}}"><i class="fa fa-user fa-lg"></i></a>
 </div>
   </div>
  
