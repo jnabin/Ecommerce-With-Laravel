@@ -1,295 +1,53 @@
 @extends('layout.mainlayout')
 @section('content')
+@php
+    $i = 0;
+    $j=1;
+    $k = 0;
+
+    $class = "hoverx";
+    $class2 = "HoverAbleDiv";
+    $class3 = "DivOverSlide";
+@endphp
+
 <nav class="hide border-top border-secondary">
     <ul class="list-unstyled py-0 mb-0 HideAbleList">
-        <li class= "d-inline-block p-3 ml-3 mr-1 NewIn">New IN</li>
-        <li class= "d-inline-block p-3 mx-1 winter">Winter</li>
-        <li class= "d-inline-block p-3 mx-1 tees">Shirts &amp; Tees</li>
-        <li class= "d-inline-block p-3 mx-1 ef">Ethnic &amp; Festive Wear</li>
-        <li class= "d-inline-block p-3 mx-1 pants">Pants</li>
-        <li class= "d-inline-block p-3 mx-1 footwear">FootWear</li>
-        <li class= "d-inline-block p-3 mx-1 accessories">Accessories</li>
+        @foreach ($category->subCategories as $item)
+        @php
+            $i++;
+        @endphp
+        @if ($i==1)
+        <li class= "d-inline-block p-3 ml-3 mr-1 {{$class.$i}}">{{$item->subCategory_name}}</li>            
+        @else
+        <li class= "d-inline-block p-3 mx-1 {{$class.$i}}">{{$item->subCategory_name}}</li>
+        @endif
+        @endforeach
+       
     </ul>
 </nav>
-<div class="DivOverSlide">
-<div class="container HoverAbleDiv">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Casual Shirt</a>
-                </li>
-                <li>
-                    <a href="#">Panjabi/Kurta</a>
-                </li>
-                <li>
-                    <a href="#">Perfume</a>
-                </li>
-                <li>
-                    <a href="#">Blazer &amp; Suits</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Socks</a>
-                </li>
-                <li>
-                    <a href="#">Polo</a>
-                </li>
-                <li>
-                    <a href="#">Dress Shirt</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Chinos</a>
-                </li>
-                <li>
-                    <a href="#">Joggers</a>
-                </li>
-                <li>
-                    <a href="#">Shorts</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Sneakers</a>
-                </li>
-                <li>
-                    <a href="#">Jeans</a>
-                </li>
-                <li>
-                    <a href="#">T Shirts</a>
-                </li>
-            </ul>
-        </div>
+@foreach ($category->subCategories as $item)
+    @php
+        $j++;
+        $k++;
+    @endphp
+    
+    <div class="{{$class3.$k}}">
+    
+        <div class="container {{$class2.$j}}">
+            <div class="row p-2">
+                <div class="col">   
+                    <ul class="list-unstyled" style="column-count: 3"> 
+                        @foreach ($item->finalSubcategories as $item2)
+                        <li>
+                            <a href="#">{{$item2->finalSubcategories_name}}</a>
+                        </li>
+                        @endforeach
+                    </ul>     
+                </div>
+            </div>
+        </div>   
     </div>
-</div>
-<div class="DivOverSlide2">
-<div class="container HoverAbleDiv2">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Jackets</a>
-                </li>
-                <li>
-                    <a href="#">Sweater</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Suits &amp; Blazers</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Hoodies</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Sweatshirts</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide3">
-<div class="container HoverAbleDiv3">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Casual Shirts</a>
-                </li>
-              
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Polo</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Dress Shirts</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">T Shirts</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide4">
-<div class="container HoverAbleDiv4">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Panjabi/Kurti</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Kabli</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Vest</a>
-                </li>
-               
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide5">
-<div class="container HoverAbleDiv5">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Jeans</a>
-                </li>
-                <li>
-                    <a href="#">Joggers/Trousers</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Chinos</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Dress Pants</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Shorts</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide6">
-<div class="container HoverAbleDiv6">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Loafers</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Sneakers</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Sandals</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Boots</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide7">
-<div class="container HoverAbleDiv7">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Bags</a>
-                </li>
-               
-                <li>
-                    <a href="#">Socks</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Caps/Hats</a>
-                </li>
-                <li>
-                    <a href="#">Wallet &amp; Card Holders</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Umbrella</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Mask</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
+@endforeach
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
