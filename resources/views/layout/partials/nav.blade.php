@@ -70,7 +70,7 @@
         <a class="nav-link text-dark" href="#">Gift Voucher</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="#">Winter</a>
+        <a class="nav-link text-dark" href="{{route('LifeStyles.index')}}">LifeStyles</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-danger" href="#">SALE</a>
@@ -114,7 +114,7 @@
         <a class="nav-link text-light" style = "white-space:nowrap" href="#">Gift Voucher</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">Winter</a>
+        <a class="nav-link text-dark" href="{{route('LifeStyles.index')}}">LifeStyles</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-danger" href="#">SALE</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\ManFashionController;
 use App\Http\Controllers\WomenFashionController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LifeStyleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [HomeController::class, 'index'])->name('Home.index');
 Route::get('/man', [ManFashionController::class, 'index'])->name('ManFashion.index');
 Route::get('/woman', [WomenFashionController::class, 'index'])->name('WomenFashion.index');
+Route::get('/lifestyles', [LifeStyleController::class, 'index'])->name('LifeStyles.index');
 
 Route::get('/login', [LoginController::class, 'index'])->name('Login.index');
 Route::post('/login', [LoginController::class, 'verify']);

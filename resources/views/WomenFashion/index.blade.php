@@ -1,174 +1,57 @@
 @extends('layout.mainlayout')
 @section('content')
+@php
+    $i = 0;
+    $j=1;
+    $k = 0;
+
+    $class = "hoverx";
+    $class2 = "HoverAbleDiv";
+    $class3 = "DivOverSlide";
+@endphp
+
 <nav class="hide border-top border-secondary">
     <ul class="list-unstyled py-0 mb-0 HideAbleList">
-        <li class= "d-inline-block p-3 ml-3 mr-1 NewIn">New IN</li>
-        <li class= "d-inline-block p-3 mx-1 winter">Winter</li>
-        <li class= "d-inline-block p-3 mx-1 tees">Tops</li>
-        <li class= "d-inline-block p-3 mx-1 ef">Bottoms</li>
-        <li class= "d-inline-block p-3 mx-1 pants">Party &amp; Evening Wears</li>
-        <li class= "d-inline-block p-3 mx-1 footwear">Scarves</li>
-        <li class= "d-inline-block p-3 mx-1 accessories">Bags</li>
+        @foreach ($category->subCategories as $item)
+        @php
+            $i++;
+        @endphp
+        @if ($i==1)
+        <li class= "d-inline-block p-3 ml-3 mr-1 {{$class.$i}}">{{$item->subCategory_name}}</li>            
+        @else
+        @if($item->subCategory_name == "Scarves" || $item->subCategory_name == "Bags")
+        <li class= "d-inline-block p-3 mx-1">{{$item->subCategory_name}}</li>
+        @else
+        <li class= "d-inline-block p-3 mx-1 {{$class.$i}}">{{$item->subCategory_name}}</li>
+        @endif
+        @endif
+        @endforeach
+       
     </ul>
 </nav>
-<div class="DivOverSlide">
-<div class="container HoverAbleDiv">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Ethnic Top</a>
-                </li>
-                <li>
-                    <a href="#">Bottoms</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Fashhion Tops &amp; Shirt</a>
-                </li>
-                
-            
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Shrugs &amp; Duster</a>
-                </li>
-
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Dress</a>
-                </li>
-            </ul>
-        </div>
+@foreach ($category->subCategories as $item)
+    @php
+        $j++;
+        $k++;
+    @endphp
+    
+    <div class="{{$class3.$k}}">
+    
+        <div class="container {{$class2.$j}}">
+            <div class="row p-2">
+                <div class="col">   
+                    <ul class="list-unstyled" style="column-count: 3"> 
+                        @foreach ($item->finalSubcategories as $item2)
+                        <li>
+                            <a href="#">{{$item2->finalSubcategories_name}}</a>
+                        </li>
+                        @endforeach
+                    </ul>     
+                </div>
+            </div>
+        </div>   
     </div>
-</div>
-<div class="DivOverSlide2">
-<div class="container HoverAbleDiv2">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Overcoat</a>
-                </li>
-                <li>
-                    <a href="#">Ponchos</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Hoodies</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Jackets</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Sweatshirts</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide3">
-<div class="container HoverAbleDiv3">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Kameez/Kurtis</a>
-                </li>
-              
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Fashion Tops &amp; Shirts</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">Shrugs &amp; Duster</a>
-                </li>
-               
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Blazers</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide4">
-<div class="container HoverAbleDiv4">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">jeans</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Leggings</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col">
-        <ul class="list-unstyled">
-                <li>
-                    <a href="#">ZARZAIN PANTS</a>
-                </li>
-               
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="DivOverSlide5">
-<div class="container HoverAbleDiv5">
-    <div class="row p-2">
-        <div class="col">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">Dress</a>
-                </li>
-                
-               
-            </ul>
-        </div>
-
-    </div>
-</div>
-
-</div>
+@endforeach
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
