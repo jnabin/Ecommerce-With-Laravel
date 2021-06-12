@@ -24,7 +24,7 @@
           <h5 style="color:red">{{session('msg')}}</h5>
         </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label for="exampleInputEmail1">Username</label>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="username">
               @if($errors->has('username'))
               <span class="text-danger">{{$errors->first('username')}}</span>

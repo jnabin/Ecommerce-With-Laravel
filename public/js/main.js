@@ -1,4 +1,16 @@
 $(document).ready(function(){
+
+    $('.profile').on('click', function () {
+        $(".HoverAbleDivCart").hide();
+        $(".HoverAbleDivProfile").toggle();
+    });
+
+    $('.cart').on('click', function () {
+        $(".HoverAbleDivProfile").hide();
+        $(".HoverAbleDivCart").toggle();
+    });
+
+
     $('#dismiss, .overlay').on('click', function(){
         $('#sidebar').removeClass('active');
         $('.overlay').removeClass('active');

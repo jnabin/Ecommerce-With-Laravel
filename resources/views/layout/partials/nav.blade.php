@@ -87,12 +87,80 @@
    
     </div>
 <div class="col pl-1">
-<a class = "mr-3 text-secondary" href="#"><i class="fa fa-shopping-bag fa-lg"></i></a>
-  <a class = "text-secondary" href="{{route('Login.index')}}"><i class="fa fa-user fa-lg"></i></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 add-pad px-0 text-center position-relative"><a class = "text-secondary" href="#"><i class="fa fa-shopping-bag fa-2x"></i><span class="cart-count text-light">5</span></a></div>
+      <div class="col-6 add-pad px-0 text-center"><a class = "text-secondary profile"><i class="fa fa-user fa-2x"></i></a></div>
+    </div>
+    
+  </div>
+  
+  
 </div>
   </div>
  
 </nav>
+
+
+<div class="profile-div mr-3">
+  <div class="HoverAbleDivProfile">
+      <div class="row p-2 ">
+          <div class="col">
+              <ul class="profileList">
+                 
+              </ul>
+          </div>
+         
+      </div>
+  </div>
+</div>
+
+
+<div class="cart-div mr-3">
+  <div class="HoverAbleDivCart">
+      <div class="row p-2 ">
+          <div class="col">
+         
+                      <div class="container mt-3">
+                          <div class="row items">
+                              <div class="col-3 picture">
+                              
+                                  <img src="~/Content/image/@image" alt="cartimage" style="max-width:100%" />
+                              </div>
+                              <div class="col-9 information">
+                                  <div class="productname">
+                                      <a class="font-weight-bold" href="/Product/Details/@item.product.Product_id">@item.product.Product_name</a>
+                                  </div>
+                                 
+                                  <div class="productprice">
+                                      <span class="p-2 border border-dark">@item.count</span>
+                                     
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  
+                  <hr />
+                  <div class="container mt-1">
+                      <div class="row">
+                          <div class="col-8">
+                              <p>Subtotal:</p>
+                          </div>
+                          <div class="col-4">
+                              <p class="text-secondary">@subtotal tk</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="container m-2">
+                      <a class="p-2 border border-dark bg-secondary text-light" href="/cart/Index">Go To Cart</a>
+                  </div>
+           
+              
+          </div>
+
+      </div>
+  </div>
+</div>
 
 
 <nav class="navbar navbar-expand navfont navbar-light bg-dark mt-2">

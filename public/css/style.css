@@ -33,6 +33,15 @@
 .DivOverSlide1{
     position: relative;
 }
+.cart-count{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    font-weight: 10px;
+    z-index: 1;
+    cursor: pointer;
+    
+}
 .HoverAbleDiv{
     display: none;
     border-top: solid 1px rgb(97, 92, 92);
@@ -223,6 +232,46 @@
     background: #fff;
     
 }
+
+
+.profile-div {
+    position: relative;
+}
+.HoverAbleDivProfile {
+    display: none;
+    text-align: center;
+    border: solid 1px rgb(97, 92, 92);
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 65%;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 2px;
+}
+
+
+.cart-div {
+    position: relative;
+}
+.profile{
+    cursor: pointer;
+}
+.HoverAbleDivCart {
+    display: none;
+    text-align: center;
+    border: solid 1px rgb(97, 92, 92);
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 65%;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 2px;
+}
+
 
 .overlay {
     top: 0;

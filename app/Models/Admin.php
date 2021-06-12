@@ -11,4 +11,8 @@ class Admin extends Model
     protected $table = "admins";
     protected $primaryKey = "id";
     public $timestamps = true;
+
+    public static function addProduct($req){
+
+    }
  }

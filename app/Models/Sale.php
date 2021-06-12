@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FinalSubCategory extends Model
+class Sale extends Model
 {
     use HasFactory;
-
-    protected $table = "finalSubCategories";
+    protected $table = "sales";
     protected $primaryKey = "id";
 
-    public function products(){
-        return $this->hasMany(Product::class, 'finalSubCategory_id');
+    public function Product(){
+        return $this->hasOne(Product::class, 'sales_id');
     }
 }

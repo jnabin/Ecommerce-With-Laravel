@@ -1,5 +1,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Document</title>
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -37,6 +38,18 @@
     .navfont{ 
         font-size: 0.9rem;
         display: block;
+    }
+    .cart-count{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    font-weight: 10px;
+    z-index: 1;
+    cursor: pointer;
+    
+}
+    .add-pad{
+        padding-right: 8px !important;
     }
     
     }
